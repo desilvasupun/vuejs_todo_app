@@ -1,4 +1,55 @@
-<script setup></script>
+<script setup>
+import { onMounted, ref } from "vue";
+
+const tasksModel = ref({
+  tasks: [],
+  editing: null,
+});
+
+const createTask = (data, form$) => {
+  addToStorage(form$.data);
+  syncFromStorage();
+
+  form$.reset();
+};
+
+const addToStorage = (data) => {
+  let storageData = localStorage.getItem("tasks");
+  storageData = storageData ? JSON.parse(storageData) : [];
+  storageData.push(data);
+  localStorage.setItem("tasks", JSON.stringify(storageData));
+};
+
+const syncFromStorage = () => {
+  let tasks = localStorage.getItem("tasks");
+
+  tasksModel.value = {
+    tasks: tasks ? JSON.parse(tasks) : [],
+  };
+};
+
+const syncToStorage = () => {
+  localStorage.setItem("tasks", JSON.stringify(tasksModel.value.tasks));
+};
+
+const edit = (index) => {
+  tasksModel.value.editing = index;
+};
+
+const cancel = () => {
+  tasksModel.value.editing = null;
+  syncFromStorage();
+};
+
+const save = () => {
+  syncToStorage();
+  tasksModel.value.editing = null;
+};
+
+onMounted(() => {
+  syncFromStorage();
+});
+</script>
 
 <template>
   <h1>Hello, World!</h1>
