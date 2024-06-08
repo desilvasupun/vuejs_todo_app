@@ -1,0 +1,40 @@
+{
+  "hash": "b01c8621",
+  "configHash": "68081637",
+  "lockfileHash": "2664695e",
+  "browserHash": "ecee1372",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "6732855e",
+      "needsInterop": false
+    },
+    "@vueform/vueform": {
+      "src": "../../node_modules/@vueform/vueform/dist/index.mjs",
+      "file": "@vueform_vueform.js",
+      "fileHash": "1d91bfe1",
+      "needsInterop": false
+    },
+    "@vueform/vueform/locales/en": {
+      "src": "../../node_modules/@vueform/vueform/locales/en/index.mjs",
+      "file": "@vueform_vueform_locales_en.js",
+      "fileHash": "e5be504a",
+      "needsInterop": false
+    },
+    "@vueform/vueform/dist/vueform": {
+      "src": "../../node_modules/@vueform/vueform/dist/vueform.mjs",
+      "file": "@vueform_vueform_dist_vueform.js",
+      "fileHash": "70bb32a9",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-XSWAMETM": {
+      "file": "chunk-XSWAMETM.js"
+    },
+    "chunk-UURD7IY7": {
+      "file": "chunk-UURD7IY7.js"
+    }
+  }
+}
